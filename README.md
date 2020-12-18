@@ -1,2 +1,2 @@
-# Dockerfile-ubuntu-Apache-
-obraz ubuntu z serverem apache
+# lab10_v1
+test
