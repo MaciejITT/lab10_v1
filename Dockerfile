@@ -1,4 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
+LABEL maintainer="Wadas"
 RUN apt-get update -y
 RUN apt-get upgrade -y
-CMD ["echo", "Hello World"]
+RUN apt-get install apache2 -y
+VOLUME /var/www/html
+COPY index.html /var/www/html
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
