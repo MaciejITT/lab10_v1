@@ -1,3 +1,9 @@
-FROM nginx:1.12-alpine
+FROM nginx:latest
 LABEL maintainer="Maciej Wadas"
-CMD ["echo", "Hello World"]
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install apache2 -y
+VOLUME /var/www/html
+COPY index.html /var/www/html
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
