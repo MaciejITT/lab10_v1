@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:1.14.2
 LABEL maintainer="Maciej Wadas"
 RUN apt-get update -y
 RUN apt-get upgrade -y
